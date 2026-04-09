@@ -22,10 +22,30 @@ $(".btn").click(function(){
 
   playSound(userChosenColour);
   animatePress(userChosenColour);
+
+  checkAnswer(userClickedPattern.length-1); //???????????
 });
 
 
-function nextSequence(){   //1
+function checkAnswer(currentLevel){
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    console.log("success");
+
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function(){
+        nextSequence();
+      },1000);
+    }
+  } else {
+    console.log("wrong");
+  }
+}
+
+
+function nextSequence(){  //1
+
+  userClickedPattern = [];
+  
   level++;
   $("#level-title").text("level " + level);
 
