@@ -16,7 +16,7 @@ $(document).keypress(function (){
 
 
 $(".btn").click(function(){
-  
+
   var userChosenColour = $(this).attr("id");
   userClickedPattern.push(userChosenColour);
 
@@ -31,7 +31,7 @@ function nextSequence(){   //1
 
   var randomNumber = Math.floor(Math.random() * 4); // 2
   var randomChosenColour=buttonColours[randomNumber];// 4
-  gamePattern.Push(randomChosenColour);  // 6
+  gamePattern.push(randomChosenColour);  // 6
 
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   playSound(randomChosenColour);
