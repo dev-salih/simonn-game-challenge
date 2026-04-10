@@ -37,7 +37,8 @@ function checkAnswer(currentLevel){
       },1000);
     }
   } else {
-    console.log("wrong");
+    var audio = new Audio("sounds/wrong.mp3")
+    audio.play();
   }
 }
 
