@@ -37,7 +37,7 @@ function checkAnswer(currentLevel){
       },1000);
     }
   } else {
-    
+
     playSound("wrong");
 
     $("body").addClass("game-over");
@@ -46,6 +46,8 @@ function checkAnswer(currentLevel){
     },200);
 
     $("h1").text("Game Over, press Any Key to Restart");
+
+    startOver();
 
   }
 }
@@ -78,5 +80,9 @@ function animatePress(currentColour){
   }, 100);    
 };
 
-
+function startOver() {
+  started = false;
+  level = 0;
+  gamePattern = [];
+};
 
